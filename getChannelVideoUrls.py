@@ -128,7 +128,7 @@ def getChannelVideoUrls(channel_url):
     for playlist_url in playlists_urls:
         # print("         -------------------NEW PLAYLIST PROCESS-------------------------")
         # print(f'Channel     : {channel_url}')
-        print(f'playlist    # {playlist_number}/{playlistLength}')
+        print(f'playlist    #  {playlist_number}/{playlistLength}')
         print("playlist url: ",playlist_url)
         playlist_number+=1
 
@@ -151,6 +151,7 @@ def getChannelVideoUrls(channel_url):
                 invalid_chars = '\\/:*?".<>|'
                 trans = str.maketrans({char: '-' for char in invalid_chars})
                 videoTitle = videoTitle.translate(trans)
+                videoTitle = videoTitle.strip()
                 # print("video title: ",videoTitle)
             except ValueError as e:
                 videoTitle = "any video title"

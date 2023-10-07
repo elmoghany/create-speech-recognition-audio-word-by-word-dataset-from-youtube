@@ -5,7 +5,7 @@ import os
 def getXMLSubtitle(youtube_url, subtitle_file_path, filename):
     #download & save captions
     print('********inside getting xml subtitle********')
-    yt = pytube.YouTube(youtube_url)
+    yt = pytube.YouTube(youtube_url,use_oauth=True, allow_oauth_cache=True)
     
     download_path = os.path.join(subtitle_file_path, filename)
     if not os.path.exists(subtitle_file_path):
@@ -32,7 +32,7 @@ def getXMLSubtitle(youtube_url, subtitle_file_path, filename):
         with open(download_path+".srt","w") as srt_file:
             srt_file.write(caption_srt)
 
-    except KeyError as e:
+    except (KeyError) as e:
         print("KeyError: ",e)
         download_path = os.path.join(subtitle_file_path, 'skip')
         if not os.path.exists(subtitle_file_path):

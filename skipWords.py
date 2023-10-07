@@ -1,5 +1,4 @@
 WORDS_TO_SKIP = [
-    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
     "a",
     "axis",
     "abbreviate",
@@ -147,6 +146,7 @@ WORDS_TO_SKIP = [
     "fitness",
     "fine",
     "first",
+    "foreign",
     "for",
     "form",
     "forms",
@@ -294,7 +294,6 @@ WORDS_TO_SKIP = [
     "neither",
     "nice",
     "new",
-    "one",
     "ones",
     "one\'s"
     "org",
@@ -369,7 +368,6 @@ WORDS_TO_SKIP = [
     "run",
     "running",
     "right",
-    "seven",
     "service",
     "services",
     "side",

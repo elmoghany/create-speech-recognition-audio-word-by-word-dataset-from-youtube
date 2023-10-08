@@ -13,7 +13,7 @@ def pysrtModifications(subtitle_file_path,filename):
             os.makedirs(subtitle_file_path)
         print('subtitle path: ', subtitle_file_path)
 
-        subs = pysrt.open(download_subtitle_path+'_word_by_word.srt')
+        subs = pysrt.open(download_subtitle_path+'_word_by_word.srt', encoding='iso-8859-1')
 
         for sub in subs:
             sub.end.milliseconds += 200 #adding 200 milliseconds to end time

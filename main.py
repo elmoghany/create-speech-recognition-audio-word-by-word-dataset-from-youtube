@@ -11,12 +11,13 @@ from getChannelVideoUrls import getChannelVideoUrls
 import ijson
 import json
 
+# Done
+                    # 'https://www.youtube.com/@Tsaog'
+                    # 'https://www.youtube.com/@goldenstateortho918'
 
 def main():
     channelNames=[  
-                    'https://www.youtube.com/@Tsaog'
-                    ,'https://www.youtube.com/@goldenstateortho918'
-                    ,'https://www.youtube.com/@orthopaedicacademy'
+                    'https://www.youtube.com/@orthopaedicacademy'
                     ,'https://www.youtube.com/@ApurvMehradr'
                 ]
 

@@ -74,7 +74,7 @@ def splitAudioWordByWord(audio_file_path, subtitle_file_path, whole_filename, ou
 
             # Construct the segment's save path
             # print(f'processing {index}_{text[:10]}.mp3')
-            segment_file_path = os.path.join(download_output_path, f"{index}_{text[:10]}.mp3")
+            segment_file_path = os.path.join(download_output_path, f"{index}_{text[:13]}.mp3")
 
             if not os.path.exists(os.path.dirname(segment_file_path)):
                 os.makedirs(os.path.dirname(segment_file_path))

@@ -1,7 +1,6 @@
 #xml_to_word_by_word.py
 import os
 import xml.etree.ElementTree as ET
-import re
 
 def xMLToWordByWordSRT(subtitle_file_path, filename):
     print('********inside XML To Word By Word SRT********')

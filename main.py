@@ -1,23 +1,25 @@
 #main.py
-import heapq
-import itertools
 from getAudio import getAudio
 from getXMLSubtitle import getXMLSubtitle 
 from xMLToWordByWordSRT import xMLToWordByWordSRT
 from splitAudioWordByWord import splitAudioWordByWord
 from pysrtModifications import pysrtModifications
-from modelFineTuning import modelFineTuning
+# from modelFineTuning import modelFineTuning
 from getChannelVideoUrls import getChannelVideoUrls
-import ijson
-import json
 import multiprocessing
 import time 
 # Done
-                    # 'https://www.youtube.com/@centerforspineandorthopedi2771'
+                    # ,'https://www.youtube.com/@centerforspineandorthopedi2771'
                     # ,'https://www.youtube.com/@miachortho'
                     # ,'https://www.youtube.com/@drgirishguptaorthopaedicsu1755'
-                    # 'https://www.youtube.com/@Tsaog'
-                    # 'https://www.youtube.com/@goldenstateortho918'
+                    # ,'https://www.youtube.com/@Tsaog'
+                    # ,'https://www.youtube.com/@goldenstateortho918'
+                    # ,'https://www.youtube.com/@totaljointorthopedics6947'
+                    # ,'https://www.youtube.com/@uvaorthopaedicsurgery2919'
+                    # ,'https://www.youtube.com/@carilionclinicorthopaedice3481'
+                    # ,'https://www.youtube.com/@DAHSAcademy'
+
+
 # 250 replace pop                    'https://www.youtube.com/@orthopaedicacademy'
 
 # def main():
@@ -72,12 +74,8 @@ def process_channel(channel_url,queue):
 if __name__ == "__main__":
 
     channelNames=[  
-                    # 'https://www.youtube.com/@ORTHOCAREDrPrashantkumar'
-                    'https://www.youtube.com/@carilionclinicorthopaedice3481'
-                    ,'https://www.youtube.com/@DAHSAcademy'
-                    ,'https://www.youtube.com/@uvaorthopaedicsurgery2919'
+                    'https://www.youtube.com/@ORTHOCAREDrPrashantkumar'
                     ,'https://www.youtube.com/@Orthopedicreview'
-                    ,'https://www.youtube.com/@totaljointorthopedics6947'
                     ,'https://www.youtube.com/@TheYoungOrthopod'
                 ]
     
@@ -100,3 +98,6 @@ if __name__ == "__main__":
     while not queue.empty():
         channel_url, start_time, elapsed_time = queue.get()
         print(f"Time taken for {channel_url}: {elapsed_time:.2f//60//60} seconds and it started: {start_time:.2f}")
+
+    # for channel in channelNames:
+        # process_channel(channel,queue)

@@ -1,12 +1,12 @@
-WORDS_TO_SKIP = [
+WORDS_TO_SKIP = {
     "a",
     "am",
     "amount",
     "appointment",
     "appointmen",
     "appreciate",
-    "anti\-inflammatory",
-    "anti\-inflay",
+    "anti-inflammatory",
+    "anti-inflay",
     "antonio",
     "antonio",
     "anticipate",
@@ -180,7 +180,7 @@ WORDS_TO_SKIP = [
     "causing",
     "cause",
     "causing",
-    "in\-class",
+    "in-class",
     "class",
     "classroom",
     "clients",
@@ -292,7 +292,6 @@ WORDS_TO_SKIP = [
     "decreasing",
     "dr",
     "dr.",
-    "dr\.",
     "doctor",
     "doctors",
     "dog",
@@ -1210,7 +1209,6 @@ WORDS_TO_SKIP = [
     "wife",
     "wish",
     "wi-fi",
-    "wi\-fi",
     "with",
     "within",
     "without",
@@ -1258,4 +1256,4 @@ WORDS_TO_SKIP = [
     "yesterday",
     "youtube",
     # Add more words here
-]
+}

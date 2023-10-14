@@ -1,8 +1,6 @@
 from pydub import AudioSegment
 import os
 import yt_dlp
-import numpy as np
-import librosa
 
 def getAudio(youtube_url, audio_file_path, filename):
     print('********inside get audio********')

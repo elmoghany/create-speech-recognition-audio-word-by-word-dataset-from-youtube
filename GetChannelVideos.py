@@ -1,5 +1,4 @@
 from contextlib import nullcontext
-from httpcore import TimeoutException
 from pytube import Channel
 from pytube import Playlist
 from pytube import YouTube

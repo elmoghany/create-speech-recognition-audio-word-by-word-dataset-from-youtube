@@ -1,4 +1,5 @@
 WORDS_TO_SKIP = {
+    "*",
     "a",
     "ability",
     "articular",
@@ -628,6 +629,7 @@ WORDS_TO_SKIP = {
     "in",
     "initial",
     "indeed",
+    "indian",
     "involved",
     "involve",
     "infection",
@@ -925,6 +927,7 @@ WORDS_TO_SKIP = {
     "principles",
     "practice",
     "practition",
+    "professor",
     "provide",
     "prop",
     "problem",

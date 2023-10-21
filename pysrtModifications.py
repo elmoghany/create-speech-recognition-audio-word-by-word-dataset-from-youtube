@@ -3,7 +3,7 @@ import os
 from datetime import timedelta
 
 def pysrtModifications(subtitle_file_path,filename):
-    print('********inside  SRT Modifications********')
+    print('********4) Inside  SRT Modifications********')
     skip_path = os.path.join(subtitle_file_path, 'skip.xml')
     if (os.path.isfile(skip_path)):
         print("No modification to any subtitle  - skip")
@@ -11,7 +11,7 @@ def pysrtModifications(subtitle_file_path,filename):
         download_subtitle_path = os.path.join(subtitle_file_path, filename)
         if not os.path.exists(subtitle_file_path):
             os.makedirs(subtitle_file_path)
-        print('subtitle path: ', subtitle_file_path)
+        # print('subtitle path: ', subtitle_file_path)
 
         subs = pysrt.open(download_subtitle_path+'_word_by_word.srt', encoding='iso-8859-1')
 

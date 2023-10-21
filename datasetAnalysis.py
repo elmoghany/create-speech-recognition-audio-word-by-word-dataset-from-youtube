@@ -23,7 +23,7 @@ transcription_counts = all_metadata['transcription'].value_counts()
 
 # Get the top 50
 # top_50_transcriptions = transcription_counts.head(50)
-top_50_transcriptions = transcription_counts.iloc[351:400]
+top_50_transcriptions = transcription_counts.iloc[151:200]
 
 # Plotting
 plt.figure(figsize=(15, 10))

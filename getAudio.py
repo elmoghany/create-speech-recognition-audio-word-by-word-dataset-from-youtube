@@ -1,9 +1,11 @@
 from pydub import AudioSegment
 import os
 import yt_dlp
+import pytube
+import time
 
 def getAudio(youtube_url, audio_file_path, filename):
-    print('********inside get audio********')
+    print('********1) inside get audio********')
 
     download_path = os.path.join(audio_file_path, filename)
     if not os.path.exists(audio_file_path):
@@ -16,6 +18,7 @@ def getAudio(youtube_url, audio_file_path, filename):
         'prefer_ffmpeg': True,
         'keepvideo': True,
         'format': 'bestaudio/best',
+        # 'ratelimit': 500000,
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'wav',
@@ -29,21 +32,34 @@ def getAudio(youtube_url, audio_file_path, filename):
 
     video = yt_dlp.YoutubeDL(ydl_opts)
     try:
+        #does it have audio or will generate KeyError
+        yt = pytube.YouTube(youtube_url,use_oauth=True, allow_oauth_cache=True)
+        len(yt.streams)
+        yt.bypass_age_gate()
+        caption = yt.captions['a.en']
+
+        #download video
         video.download([youtube_url])
-        print("Successfully Downloaded")
-        print('setting the sampling rate')
+        print('audio download success: ',youtube_url)
         sound=AudioSegment.from_file(f'{download_path}'+'.wav')
         sound.set_frame_rate(16000)
         sound = sound.set_channels(1)
         sound = sound.set_sample_width(2)
-        print('saving filtered audio')
+        # print('saving filtered audio')
         filtered_path = os.path.join(audio_file_path, filename + '_filtered.mp3')
         sound.export(filtered_path)
         os.remove(download_path)
         os.remove(f'{download_path}'+'.wav')
+        print("ffmpeg successful: ", youtube_url)
+        return True
+    except KeyError as e:
+        print("failed due to KeyError, english title does not exist: ", e)
+        return False
+    except pytube.exceptions.RecordingUnavailable as e:
+        print("Recording unavailable: ", e)
     except Exception as e:
-        print("failed to Downloaded: ", e)
-        
+        print(f"failed to Download: , {e}, for {youtube_url}")
+
 #     # Determine if an MP3 file contains speech based on energy thresholding
 #     def is_speech(filtered_path=filtered_path, threshold=0.9, frame_length=2048, hop_length=512, high_energy_percentage=0.3):
         

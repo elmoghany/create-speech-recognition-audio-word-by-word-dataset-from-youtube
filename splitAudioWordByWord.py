@@ -5,7 +5,7 @@ import csv
 from skipWords import WORDS_TO_SKIP
 
 def splitAudioWordByWord(audio_file_path, subtitle_file_path, whole_filename, output_file_path, output_file_name):
-    print('********inside  split audio word by word********')
+    print('********5) inside  split audio word by word********')
 
     skip_path = os.path.join(subtitle_file_path, 'skip.xml')
     if (os.path.isfile(skip_path)):
@@ -35,8 +35,8 @@ def splitAudioWordByWord(audio_file_path, subtitle_file_path, whole_filename, ou
             
             return parsed_srt
 
-        print('original audio    path: ', audio_file_path)
-        print('original subtitle path: ', subtitle_file_path)
+        # print('original audio    path: ', audio_file_path)
+        # print('original subtitle path: ', subtitle_file_path)
 
         download_audio_path = os.path.join(audio_file_path, whole_filename)
         if not os.path.exists(audio_file_path):
@@ -45,8 +45,8 @@ def splitAudioWordByWord(audio_file_path, subtitle_file_path, whole_filename, ou
         if not os.path.exists(subtitle_file_path):
             os.makedirs(subtitle_file_path)
 
-        print('download audio    path: ', download_audio_path)
-        print('download subtitle path: ', download_subtitle_path)
+        # print('download audio    path: ', download_audio_path)
+        # print('download subtitle path: ', download_subtitle_path)
 
         audio = AudioSegment.from_file(download_audio_path+'_filtered.mp3', format="mp3")
         parsed_srt = parse_srt(download_subtitle_path+'_word_by_word.srt')
@@ -54,12 +54,12 @@ def splitAudioWordByWord(audio_file_path, subtitle_file_path, whole_filename, ou
 
         rows = []  # Initialize an empty list to hold rows
 
-        print('original output path: ', output_file_path)
+        # print('original output path: ', output_file_path)
 
         download_output_path = os.path.join(output_file_path, output_file_name)
         if not os.path.exists(output_file_path):
             os.makedirs(output_file_path)
-        print('download output path: ', download_output_path)
+        # print('download output path: ', download_output_path)
 
         for entry in parsed_srt:
             start_time = entry['start_time']

@@ -3,11 +3,11 @@ import os
 import xml.etree.ElementTree as ET
 
 def xMLToWordByWordSRT(subtitle_file_path, filename):
-    print('********inside XML To Word By Word SRT********')
+    print('********3) inside XML To Word By Word SRT********')
     skip_path = os.path.join(subtitle_file_path, 'skip.xml')
     if (os.path.isfile(skip_path)):
-        print("skip path: ",skip_path)
-        print("No subtitle is generated  - skip")
+        # print("skip path: ",skip_path)
+        print("No subtitle is generated - skip")
         return True
     else:
         def convert_xml_to_word_by_word_srt(xml_content):
@@ -59,7 +59,7 @@ def xMLToWordByWordSRT(subtitle_file_path, filename):
         if not os.path.exists(subtitle_file_path):
             os.makedirs(subtitle_file_path)
 
-        print('download subtitle path: ', download_path)
+        # print('download subtitle path: ', download_path)
 
         # Your XML string
         with open(download_path+'.xml', 'r') as xml_file:

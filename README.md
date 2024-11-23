@@ -1,3 +1,6 @@
+# Demo
+https://www.youtube.com/@cammedar/videos
+
 # pre-requisites
 1. download whisper-tiny.en model from hugging face
 2. put its files under models/whisper-tiny.en
